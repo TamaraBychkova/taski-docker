@@ -7,19 +7,15 @@ on:
 
 jobs:
   tests:
-    # Разворачиваем окружение:
     runs-on: ubuntu-latest
 
     steps:
-    # Копируем код проекта
-    - name: Check out code
-      uses: actions/checkout@v3
-    # Устанавливаем Python с помощью action
+    - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
-    # В action setup-python@v4 передаём параметр — версию Python
       with:
         python-version: 3.9
+
     # Чтобы запустить тесты, нужно установить зависимости
     - name: Install dependencies
       run: |
