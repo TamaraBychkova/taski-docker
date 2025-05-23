@@ -1,13 +1,16 @@
 """Import."""
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['158.160.66.84', 'taskiproject.serveblog.net', 'localhost', '127.0.0.1']
 
